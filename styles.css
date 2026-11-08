@@ -1,0 +1,5 @@
+/* Minimal reset. Visual design is intentionally not set here. */
+*, *::before, *::after { box-sizing: border-box; }
+html { line-height: 1.5; }
+body { margin: 0; }
+img, svg, video { max-width: 100%; }
