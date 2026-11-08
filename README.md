@@ -6,7 +6,7 @@ It is not a registered church. These pages claim no incorporation, charitable ce
 
 The doctrinal source is [FOUNDING-THEOLOGY.md](FOUNDING-THEOLOGY.md). The site publishes that text, including the preamble, all four parts, and all forty-four chapters. It does not add doctrine, and it does not resolve tensions the founding theology leaves visible.
 
-`styles.css` is a minimal reset so the pages can be read. It is not a visual identity.
+The visual identity lives in `styles.css`, `site.js`, and self-hosted fonts under `fonts/`: a warm living light behind parchment reading pages.
 
 ## GitHub Pages
 

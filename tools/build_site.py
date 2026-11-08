@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Generate plain HTML pages from FOUNDING-THEOLOGY.md.
 
-The pages are a reading site, not a visual design. styles.css is a short reset.
+The pages are generated from FOUNDING-THEOLOGY.md. styles.css and site.js hold the visual identity.
 """
 
 from __future__ import annotations
@@ -154,6 +154,7 @@ def footer_html(depth: int) -> str:
 
 def page(title: str, depth: int, current: str, body: str) -> str:
     css = site_href("styles.css", depth)
+    js = site_href("site.js", depth)
     home = site_href("index.html", depth)
     description = "The Faith of the Whole Maker. God is the Whole Maker, not the largest possessor. We seek communion rather than possession."
     return f"""<!DOCTYPE html>
@@ -179,6 +180,7 @@ def page(title: str, depth: int, current: str, body: str) -> str:
 {body}
   </main>
 {footer_html(depth)}
+  <script src="{js}" defer></script>
 </body>
 </html>
 """
@@ -386,15 +388,6 @@ def build() -> None:
             ),
         )
 
-    write(
-        ROOT / "styles.css",
-        """/* Minimal reset. Visual design is intentionally not set here. */
-*, *::before, *::after { box-sizing: border-box; }
-html { line-height: 1.5; }
-body { margin: 0; }
-img, svg, video { max-width: 100%; }
-""",
-    )
     write(ROOT / ".nojekyll", "")
     verify(theology)
 
